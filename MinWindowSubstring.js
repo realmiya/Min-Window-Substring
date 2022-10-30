@@ -1,4 +1,4 @@
-Min Window Substring//
+// Min Window Substring
 function MinWindowSubstring(strArr) { 
 	let Nstr = strArr[0];
 	let Kneedle = strArr[1].split('');
@@ -6,9 +6,8 @@ function MinWindowSubstring(strArr) {
 
 	for (let i = Kneedle.length, len = Nstr.length; i <= len; i++ ) {
 		for (j = 0; j <= len - i; j++) {
-			let mySlice = Nstr.substr(j, i);//此处如果第二个参数的value是i，必须用substr， 而不是substring， substr第二个参数表示length
-      let mySlice = Nstr.substring(j, j+i);//substring的第二个参数表示index
-
+			let mySlice = Nstr.substr(j, i);//此处如果第二个参数的value是i，必须用substr，而不是substring， 因为substr第二个参数表示length
+			//let mySlice = Nstr.substring(j, j+i);//substring的第二个参数表示index
 			if (isContained(mySlice)) {
 				return mySlice;
 			}
@@ -27,9 +26,9 @@ function MinWindowSubstring(strArr) {
 			if (place === -1) {
 				return;
 			} else {
-        //  console.log(arr);
+        			//  console.log(arr);
 				arr.splice(place, 1);//为了保证找到的字串里contain kstr里面相同数量的字母
-        //  console.log(arr);
+        			//  console.log(arr);
 			}
 		}
 		return true;
